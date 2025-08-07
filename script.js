@@ -6,7 +6,14 @@ const includeNumbers = document.querySelector(".numbers")
 const includeSymbols = document.querySelector(".symbols")
 
 
-function generatePassword(passwordLength){
+const lowerCase = "abcdefghijklmnopqrstuvwxyz";
+const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const numbers = "123456789";
+const symbols= "!@#$%^&*()_+-={}[]|\~?/>.<,:;";
+
+let allowedChars = "";
+
+function generatePassword(){
     if(passwordLength.value < 5){
         errorMsg.classList.remove("no-error")
         errorMsg.classList.add("error")
@@ -17,4 +24,9 @@ function generatePassword(passwordLength){
         errorMsg.classList.add("no-error")
         errorMsg.innerHTML = "Password generated successfully"
     }
+
+    allowedChars += includeLowercase.checked?lowerCase:""
+    allowedChars += includeUppercase.checked?upperCase:"";
+    allowedChars += includeNumbers.checked?numbers:"";
+    allowedChars += includeSymbols.checked?symbols:"";    
 }
