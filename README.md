@@ -1,2 +1,2 @@
 # RandomPasswordGenerator
-A simple password generator program designed using javascript
+A simple password generator program designed using javascript!
