@@ -42,7 +42,7 @@ function generatePassword(){
     }
 
     //GENRERATING THE PASSWORD IF THE CONDITIONS ARE SATISFIED
-    else{
+    else if(allowedChars !== "" && passwordLength.value>=5){
         for(let i=0;i<passwordLength.value;i++){
             let randomNumber = Math.floor(Math.random()*allowedChars.length);
             password += allowedChars[randomNumber] 
