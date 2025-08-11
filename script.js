@@ -28,5 +28,11 @@ function generatePassword(){
     allowedChars += includeLowercase.checked?lowerCase:""
     allowedChars += includeUppercase.checked?upperCase:"";
     allowedChars += includeNumbers.checked?numbers:"";
-    allowedChars += includeSymbols.checked?symbols:"";    
+    allowedChars += includeSymbols.checked?symbols:"";
+
+    if(allowedChars === ""){
+        errorMsg.classList.remove("no-error")
+        errorMsg.classList.add("error")
+        errorMsg.innerHTML = "At least one of the below options should be selected"
+    }
 }
