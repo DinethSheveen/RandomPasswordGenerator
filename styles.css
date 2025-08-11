@@ -32,6 +32,8 @@ label{
 input[type="number"]{
     width: 100%;
     padding: 0.3rem;
+    font-size: 1.4rem;
+    text-align: center;
 }
 
 .radio-selections{
@@ -67,6 +69,7 @@ button:active{
 .error-msg{
     text-align: center;
     font-weight: bold;
+    font-size: 1.2rem;
 }
 
 .error{
@@ -75,4 +78,11 @@ button:active{
 
 .no-error{
     color:green;
+}
+
+.generated-password{
+    text-align: center;
+    font-weight: bold;
+    margin: 10px;
+    font-size: 1.5rem;
 }
