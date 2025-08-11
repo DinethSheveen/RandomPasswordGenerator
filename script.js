@@ -4,7 +4,8 @@ const includeLowercase = document.querySelector(".lowercase")
 const includeUppercase = document.querySelector(".uppercase")
 const includeNumbers = document.querySelector(".numbers")
 const includeSymbols = document.querySelector(".symbols")
-
+const generatedPassword = document.querySelector(".generated-password"); 
+let password="";
 
 const lowerCase = "abcdefghijklmnopqrstuvwxyz";
 const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -14,6 +15,7 @@ const symbols= "!@#$%^&*()_+-={}[]|\~?/>.<,:;";
 let allowedChars = "";
 
 function generatePassword(){
+    generatedPassword.innerHTML = ""
     if(passwordLength.value < 5){
         errorMsg.classList.remove("no-error")
         errorMsg.classList.add("error")
@@ -34,5 +36,15 @@ function generatePassword(){
         errorMsg.classList.remove("no-error")
         errorMsg.classList.add("error")
         errorMsg.innerHTML = "At least one of the below options should be selected"
+    }
+
+    //GENRERATING THE PASSWORD IF THE CONDITIONS ARE SATISFIED
+    else{
+        for(let i=0;i<passwordLength.value;i++){
+            let randomNumber = Math.floor(Math.random()*allowedChars.length);
+            password += allowedChars[randomNumber] 
+        }
+        generatedPassword.innerHTML = password;
+        password = "";
     }
 }
