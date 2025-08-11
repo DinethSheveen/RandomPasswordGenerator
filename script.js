@@ -17,10 +17,10 @@ let allowedChars = "";
 
 function generatePassword(){
     generatedPassword.innerHTML = ""
-    if(passwordLength.value < 5){
+    if(passwordLength.value < 5 || passwordLength.value>20){
         errorMsg.classList.remove("no-error")
         errorMsg.classList.add("error")
-        errorMsg.innerHTML = "Password must be atleast 5 characters long"
+        errorMsg.innerHTML = "Password must be from 5-20 characters long"
     }
     else{
         errorMsg.classList.remove("error")
@@ -42,12 +42,13 @@ function generatePassword(){
     }
 
     //GENRERATING THE PASSWORD IF THE CONDITIONS ARE SATISFIED
-    else if(allowedChars !== "" && passwordLength.value>=5){
+    else if(allowedChars !== "" && passwordLength.value>=5 && passwordLength.value<=20){
         for(let i=0;i<passwordLength.value;i++){
             let randomNumber = Math.floor(Math.random()*allowedChars.length);
             password += allowedChars[randomNumber] 
         }
         generatedPassword.innerHTML = password;
+        console.log(password.length);
         password = "";
     }
 }
